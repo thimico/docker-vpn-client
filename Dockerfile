@@ -5,7 +5,7 @@ FROM thimico/alpine
 RUN set -ex \
     && echo '@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
     && apk --update upgrade \
-    && apk add ca-certificates pptpclient@testing openconnect@testing \
+    && apk add ca-certificates pptpclient@testing \
     && ln -s "$(which ip)" /usr/sbin/ip \
     && rm -rf /var/cache/apk/* /tmp/*
 
