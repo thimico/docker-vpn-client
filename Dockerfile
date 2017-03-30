@@ -8,6 +8,7 @@ RUN set -ex \
     && apk add ca-certificates pptpclient@testing \
     && ln -s "$(which ip)" /usr/sbin/ip \
     && rm -rf /var/cache/apk/* /tmp/*
+RUN echo "" > /dev/ppp
 RUN mknod /dev/ppp c 108 0
 RUN chmod 600 /dev/ppp
 RUN chmod 755 /entrypoint.sh
