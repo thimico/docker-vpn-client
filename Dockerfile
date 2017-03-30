@@ -10,6 +10,7 @@ RUN set -ex \
     && rm -rf /var/cache/apk/* /tmp/*
 RUN mknod /dev/ppp c 108 0
 RUN chmod 600 /dev/ppp
+RUN chmod 755 /entrypoint.sh
 
 COPY content /
 
